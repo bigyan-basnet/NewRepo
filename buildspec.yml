@@ -4,14 +4,17 @@ phases:
   install:
     commands:
       - echo "Installing dependencies... (none for static site)"
+
   build:
     commands:
-      - echo "Build phase: Nothing to compile"
+      - echo "Build started on $(date)"
+
   post_build:
     commands:
-      - echo "Post-build: Preparing for deployment"
+      - echo "Build completed on $(date)"
 
 artifacts:
   files:
     - index.html
-    - styles.css
+    - style.css
+    - appspec.yml
