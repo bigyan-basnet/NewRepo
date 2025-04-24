@@ -1,20 +1,22 @@
 version: 0.2
 
-phases:
-  install:
-    commands:
-      - echo "Installing dependencies... (none for static site)"
-
-  build:
-    commands:
-      - echo "Build started on $(date)"
-
-  post_build:
-    commands:
-      - echo "Build completed on $(date)"
-
+phases: 
+    build:
+        commands:
+            - echo "Build block"
+            - ls
+            - echo "Running tests to check if "Congratulations" present in index.html file"
+            - grep "Congratulations" index.html
+    post_build:
+        commands:
+            - echo "Post build phase"
 artifacts:
-  files:
-    - index.html
-    - style.css
-    - appspec.yml
+    files:
+        - scripts/install_dependencies
+        - scripts/start_server
+        - scripts/stop_server
+        - index.html
+        - appspec.yml
+    discard-paths: yes
+
+            
