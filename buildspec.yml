@@ -3,13 +3,13 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo Installing dependencies... (none for static site)
+      - echo "Installing dependencies... (none for static site)"
   build:
     commands:
-      - echo Build started on `date`
+      - echo "Build phase: Nothing to compile"
   post_build:
     commands:
-      - echo Build completed on `date`
+      - echo "Post-build: Preparing for deployment"
 
 artifacts:
   files:
